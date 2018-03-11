@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "noImplicitAny": true,
+    "target": "es5",
+    "module": "es6",
+    "moduleResolution": "node",
+    "allowJs": true
+  },
+  "files": [
+    "./config/typescript.config.d.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": ["node_modules"],
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "my-tsconfig.json"
+      }
+    }
+  }
+}

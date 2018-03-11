@@ -1,0 +1,14 @@
+:root{
+    --textColor :red;
+    --textShadow : #f8f8f8 0px 0px 14px;
+}
+
+.hello{
+    color: #000;
+    font-size: 3em;
+    color: var(--textColor);
+    text-shadow: var(--textShadow);
+    -webkit-text-fill-color:  var(--textColor);
+    -webkit-text-stroke-color:aqua;
+    -webkit-text-stroke-width:1px;
+}

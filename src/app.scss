@@ -1,0 +1,18 @@
+.app-title{
+  color: transparent;
+  font-size: 3em;
+  text-shadow: #f8f8f8 0px 0px 3px;
+  -webkit-text-fill-color:  transparent;
+  -webkit-text-stroke-color:#fff;
+  -webkit-text-stroke-width:1px;
+  transition: all ease-in-out 0.3s;
+  &:hover{
+    text-shadow: #f8f8f8 0px 0px 31px;
+  }
+}
+div{
+ &>img{
+    max-width: 30vw;
+    box-shadow: #444444 0px 0px 10px 3px ;
+  }
+}

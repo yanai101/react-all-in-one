@@ -25,12 +25,16 @@ const config = {
         contentBase: configPath.buildPath,
         stats: "minimal",
         // quiet: true,
+          proxy: {
+            "/api": "http://localhost:3000/"  // or other url :)
+        },
+        // quiet: true,
+        historyApiFallback: {
+            disableDotRule: true
+        },
         overlay: {
             warnings: true,
-            errors: true,
-            historyApiFallback: {
-                disableDotRule: true
-            }
+            errors: true
         },
 
     },

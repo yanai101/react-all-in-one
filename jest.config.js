@@ -6,8 +6,8 @@ module.exports = {
         "^.+\\.tsx?$": "ts-jest",
         ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
     },
-    testURL:"http://localhost/",
-    testRegex: "(/specs/.*|(\\.|/)(test|spec))\\.(js?|jsx?|tsx?)?$",
+    testURL: "http://localhost/",
+    testRegex: "(/specs/.*(test|spec))\\.(js?|jsx?|tsx?)?$",
     moduleFileExtensions: [
         "ts",
         "tsx",
@@ -18,6 +18,7 @@ module.exports = {
     ],
     moduleNameMapper: {
         "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-      },
-    transformIgnorePatterns: ['node_modules','dist' ]
+    },
+    setupFiles: ['<rootDir>/src/specs/index.tsx'],
+    transformIgnorePatterns: ['node_modules', 'dist']
 }

@@ -3,6 +3,7 @@ import css from './header.css';
 import scss from './headers.scss';
 
 class Header extends React.Component <any, any> {
+    
     render() {
         return (
             <div className={scss.headerCon}>

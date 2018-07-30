@@ -14,7 +14,7 @@ class App extends Component {
           <img src={logo} className={cls["App-logo"]} alt="logo" />
           <h1 className={scssCls["app-title"]}>Welcome to Reacts and webpack 4 !!</h1>
         </header>
-          <Header/>
+          <Header onClick={_=>conmsole.log('ss')}/>
         <p className={cls["App-intro"]}>
           <div>
               <img src={gifImg}/>

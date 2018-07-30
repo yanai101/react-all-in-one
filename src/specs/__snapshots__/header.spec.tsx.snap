@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header/> Should render corrently 1`] = `
+<div
+  className="headerCon"
+>
+  <header
+    className="headerFont"
+  >
+    hover on the up title  !!!
+  </header>
+</div>
+`;

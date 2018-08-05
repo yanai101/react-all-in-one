@@ -25,8 +25,8 @@ const config = {
         contentBase: configPath.buildPath,
         stats: "minimal",
         // quiet: true,
-          proxy: {
-            "/api": "http://localhost:3000/"  // or other url :)
+        proxy: {
+            "/api": "http://localhost:3000/" // or other url :)
         },
         // quiet: true,
         historyApiFallback: {
@@ -46,7 +46,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development site',
-            template:'./index.html',
+            template: './index.html',
         }),
         new NamedModulesPlugin(),
         new HotModuleReplacementPlugin(),

@@ -31,33 +31,41 @@ module.exports = {
             {
                 test: /((\.jsx?)|(\.js))$/,
                 exclude: /(node_modules|bower_components)/,
-                use: [
-                    {
-                        loader: 'awesome-typescript-loader',
-                        options: {
-                            transpileOnly: true, // Note, this means you ignore errors.// Due to legacy, we ignore errors in TypeScript files too, DON'T DO THIS FOR TS FILES
-                            useCache: true,
-                            configFileName: process.env.TS_CONFIG_CODE || 'tsconfig.json'
-                        }
+                use: [{
+                    loader: 'awesome-typescript-loader',
+                    options: {
+                        transpileOnly: true, // Note, this means you ignore errors.// Due to legacy, we ignore errors in TypeScript files too, DON'T DO THIS FOR TS FILES
+                        useCache: true,
+                        configFileName: process.env.TS_CONFIG_CODE || 'tsconfig.json'
                     }
-                ],
+                }],
 
             },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: [
-                        {
+                    use: [{
                             loader: "css-loader",
                             options: {
-                                minimize: true,
-                                module: true,
+                                modules: true,
                                 importLoaders: 1, // make sure sass-loader is used on imported assets
                                 localIdentName: "[local]__[name]__[hash:base64:5]",
-                                publicPath:  configPath.buildPath //"./dist"
+                                publicPath: configPath.buildPath //"./dist"
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                indent:'postcss',
+                                plugins:(loader) => {
+                                    require('cssnano')({
+                                        preset: 'default'
+                                    })
+                                }
                             }
                         }
+                        
                     ]
                 })
             },
@@ -65,16 +73,17 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: [
-                        {
+                    use: [{
                             loader: "css-loader",
                             options: {
-                                minimize: true,
-                                module: true,
+                                modules: true,
                                 importLoaders: 1, // make sure sass-loader is used on imported assets
                                 localIdentName: "[local]__[name]__[hash:base64:5]",
-                                publicPath:  configPath.buildPath //"./dist"
+                                publicPath: configPath.buildPath //"./dist"
                             }
+                        },
+                        {
+                            loader: 'postcss-loader',
                         },
                         'sass-loader'
                     ]
@@ -82,15 +91,13 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000,
-                            name: 'media/[name].[hash:8].[ext]',
-                        },
-                    }
-                ]
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        name: 'media/[name].[hash:8].[ext]',
+                    },
+                }]
 
             },
             {

@@ -4,7 +4,6 @@
   "main": "index.js",
   "repository": "https://github.com/yanai101/react-all-in-one.git",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack --env.env=prod --config config/webpack.config.js",

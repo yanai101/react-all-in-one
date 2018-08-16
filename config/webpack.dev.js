@@ -54,7 +54,8 @@ const config = {
             filename: "style.css",
             allChunks: true,
             disable: true
-        })
+        }),
+        new webpack.DefinePlugin({ 'process.env.API_URL': JSON.stringify('http://DEV:8000' ) })
     ]
 };
 

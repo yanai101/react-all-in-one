@@ -34,6 +34,7 @@ module.exports = {
                 minifyCSS: true,
                 minifyURLs: true
             }
-        })
+        }),
+        new webpack.DefinePlugin({ 'process.env.API_URL': JSON.stringify('http://PRODURL:8000') })
     ]
 }

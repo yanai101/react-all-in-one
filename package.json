@@ -1,7 +1,8 @@
 {
-  "name": "test",
+  "name": "@yanai/react-all-in-one",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/yanai101/react-all-in-one.git",
   "license": "MIT",
   "private": true,
   "scripts": {

@@ -57,14 +57,15 @@ module.exports = {
                         // {loader: 'postcss-loader'}
                         {
                             loader: 'postcss-loader',
-                            options: {
-                                indent:'postcss',
-                                plugins:(loader) => {
-                                    require('cssnano')({
-                                        preset: 'default'
-                                    })
-                                }
-                            }
+                            // for local post css- option config...
+                            // options: {
+                            //     indent:'postcss',
+                            //     plugins:(loader) => {
+                            //         require('cssnano')({
+                            //             preset: 'default'
+                            //         })
+                            //     }
+                            // }
                         }
                         
                     ]

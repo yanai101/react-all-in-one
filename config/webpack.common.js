@@ -54,17 +54,18 @@ module.exports = {
                                 publicPath: configPath.buildPath //"./dist"
                             }
                         },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                indent:'postcss',
-                                plugins:(loader) => {
-                                    require('cssnano')({
-                                        preset: 'default'
-                                    })
-                                }
-                            }
-                        }
+                        {loader: 'postcss-loader'}
+                        // {
+                        //     loader: 'postcss-loader',
+                        //     options: {
+                        //         indent:'postcss',
+                        //         plugins:(loader) => {
+                        //             require('cssnano')({
+                        //                 preset: 'default'
+                        //             })
+                        //         }
+                        //     }
+                        // }
                         
                     ]
                 })
@@ -82,9 +83,9 @@ module.exports = {
                                 publicPath: configPath.buildPath //"./dist"
                             }
                         },
-                        {
-                            loader: 'postcss-loader',
-                        },
+                        // {
+                        //     loader: 'postcss-loader',
+                        // },
                         'sass-loader'
                     ]
                 })

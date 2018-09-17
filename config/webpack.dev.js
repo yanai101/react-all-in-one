@@ -46,7 +46,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development site',
-            template: './index.html',
+            template: './static/index.html',
         }),
         new NamedModulesPlugin(),
         new HotModuleReplacementPlugin(),

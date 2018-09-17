@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
 
@@ -118,7 +119,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: true,
             hash: true,
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: './static/',
+                to: './'
+            }
+        ])
     ],
     resolve: {
         extensions: [".js", ".ts", ".tsx", ".css", ".scss"]

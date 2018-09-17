@@ -21,7 +21,7 @@ module.exports = {
             allChunks: true
         }),
         new HtmlWebpackPlugin({
-            template:'./index.html',
+            template:'./static/index.html',
             title:'Prod version',
             minify:{
                 removeComments: true,

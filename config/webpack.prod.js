@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -20,7 +21,7 @@ module.exports = {
             allChunks: true
         }),
         new HtmlWebpackPlugin({
-            template:'./index.html',
+            template:'./static/index.html',
             title:'Prod version',
             minify:{
                 removeComments: true,
@@ -34,6 +35,7 @@ module.exports = {
                 minifyCSS: true,
                 minifyURLs: true
             }
-        })
+        }),
+        new webpack.DefinePlugin({ 'process.env.API_URL': JSON.stringify('http://PRODURL:8000') })
     ]
 }

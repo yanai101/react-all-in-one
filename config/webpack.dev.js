@@ -46,7 +46,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development site',
-            template: './index.html',
+            template: './static/index.html',
         }),
         new NamedModulesPlugin(),
         new HotModuleReplacementPlugin(),
@@ -54,7 +54,8 @@ const config = {
             filename: "style.css",
             allChunks: true,
             disable: true
-        })
+        }),
+        new webpack.DefinePlugin({ 'process.env.API_URL': JSON.stringify('http://DEV:8000' ) })
     ]
 };
 

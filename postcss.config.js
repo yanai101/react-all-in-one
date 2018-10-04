@@ -1,6 +1,8 @@
-// module.exports = {
-//     parser: 'sugarss',
-//     map: true,
-//     plugin: {
-//     }
-// }
+module.exports = {
+   parser: 'postcss-scss',
+    plugins: {
+      'postcss-import': {},
+      'postcss-preset-env': {},
+      'cssnano': {  preset: 'default' }
+    }
+  }

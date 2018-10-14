@@ -2,7 +2,8 @@ const path = require('path');
 const configPath = require('./paths.config');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("extract-css-chunks-webpack-plugin");
+
 const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
@@ -44,9 +45,9 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: [{
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
                             loader: "css-loader",
                             options: {
                                 modules: true,
@@ -70,27 +71,25 @@ module.exports = {
                         }
                         
                     ]
-                })
             },
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: [{
-                            loader: "css-loader",
-                            options: {
-                                modules: true,
-                                importLoaders: 1, // make sure sass-loader is used on imported assets
-                                localIdentName: "[local]__[name]__[hash:base64:5]",
-                                publicPath: configPath.buildPath //"./dist"
-                            }
-                        },
-                        {
-                            loader: 'postcss-loader',
-                        },
-                        'sass-loader'
-                    ]
-                })
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            importLoaders: 1, // make sure sass-loader is used on imported assets
+                            localIdentName: "[local]__[name]__[hash:base64:5]",
+                            publicPath: configPath.buildPath //"./dist"
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                    },
+                    'sass-loader'
+                ]
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -116,10 +115,16 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            inject: true,
-            hash: true,
-        }),
+        // new MiniCssExtractPlugin({
+        //     // Options similar to the same options in webpackOptions.output
+        //     // both options are optional
+        //     filename: "[name].css",
+        //     chunkFilename: "[id].css"
+        // }),
+        // new HtmlWebpackPlugin({
+        //     inject: true,
+        //     hash: true,
+        // }),
         new CopyWebpackPlugin([
             {
                 from: './static/',

@@ -1,5 +1,9 @@
 const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("extract-css-chunks-webpack-plugin");
+
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
@@ -15,10 +19,17 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin({
-            filename: "css/style.css",
-            disable: false,
-            allChunks: true
+        // new ExtractTextPlugin({
+        //     filename: "css/style.css",
+        //     disable: false,
+        //     allChunks: true
+        // }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css",
+            cssModules: true // if you use cssModules, this can help.
         }),
         new HtmlWebpackPlugin({
             template:'./static/index.html',

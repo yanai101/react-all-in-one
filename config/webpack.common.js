@@ -16,6 +16,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: configPath.buildPath,
+        chunkFilename: '[name].bundle.js',
     },
     module: {
         rules: [
@@ -34,12 +35,16 @@ module.exports = {
                 test: /((\.jsx?)|(\.js))$/,
                 exclude: /(node_modules|bower_components)/,
                 use: [{
-                    loader: 'awesome-typescript-loader',
+                    loader: 'babel-loader',
                     options: {
-                        transpileOnly: true, // Note, this means you ignore errors.// Due to legacy, we ignore errors in TypeScript files too, DON'T DO THIS FOR TS FILES
-                        useCache: true,
-                        configFileName: process.env.TS_CONFIG_CODE || 'tsconfig.json'
-                    }
+                        presets: ['@babel/preset-env', "@babel/preset-react"],
+                        plugins: ['@babel/plugin-proposal-object-rest-spread' ,"@babel/plugin-syntax-dynamic-import"]                        
+                     }
+                    // options: {
+                    //     transpileOnly: true, // Note, this means you ignore errors.// Due to legacy, we ignore errors in TypeScript files too, DON'T DO THIS FOR TS FILES
+                    //     useCache: true,
+                    //     configFileName: process.env.TS_CONFIG_CODE || 'tsconfig.json'
+                    // }
                 }],
 
             },
@@ -133,6 +138,6 @@ module.exports = {
         ])
     ],
     resolve: {
-        extensions: [".js", ".ts", ".tsx", ".css", ".scss"]
+        extensions: [".js", "jsx" , ".ts", ".tsx", ".css", ".scss"]
     }
 };

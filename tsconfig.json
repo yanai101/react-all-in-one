@@ -8,6 +8,7 @@
     "target": "es5",
     "module": "ESNext",
     "moduleResolution": "node",
+    "lib": ["es2018", "dom"],
     "allowJs": true
   },
   "files": [

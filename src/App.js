@@ -5,8 +5,9 @@ import cls from './App.css';
 import scssCls from './app.scss';
 import './main.global.scss';
 import Header from "./components/heder";
-const LazyComonent = lazy(()=> import('./components/lazyComponent'));
+const LazyComponent = lazy(()=> import('./components/lazyComponent'));
 
+// const RestaurantListComponent = lazy(() => import('./RestaurantList'));
 
 const Counter = ()=>{
   const [count, setCount] = useState(0)
@@ -50,7 +51,7 @@ class App extends Component {
                 <button onClick={_=>this.setState({lazy: true})}>Load more</button>
                 {this.state.lazy &&
                 <Suspense fallback={<span>Loading...</span>}>
-                    <LazyComonent/>
+                    <LazyComponent/>
                 </Suspense>
                   }
               </div>

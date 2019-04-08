@@ -6,3 +6,4 @@ webpack.config.old.js
 .idea
 yarn-error.log
 yarn.lock
+package-lock.json

@@ -5,8 +5,9 @@ import scss from './headers.scss';
 const a = 12;
 
 class Header extends React.Component <any, any> {
-
+    
     private poo: any;
+
     render() {
         return (
             <div className={scss.headerCon}>

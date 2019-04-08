@@ -1,6 +1,7 @@
 {
-  "extends": ["tslint-react"],
+  "extends": ["tslint-react" , "tslint-react-hooks"],
   "rules": {
+    "react-hooks-nesting": "error",
     "align": [
       true,
       "parameters",

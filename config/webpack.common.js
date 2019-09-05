@@ -57,7 +57,9 @@ module.exports = {
                             options: {
                                 modules: true,
                                 importLoaders: 1, // make sure sass-loader is used on imported assets
-                                localIdentName: "[local]__[name]__[hash:base64:5]",
+                                modules: {
+                                    localIdentName: "[local]__[name]__[hash:base64:5]",
+                                }
                                 // publicPath: configPath.buildPath //"./dist"
                             }
                         },
@@ -86,7 +88,9 @@ module.exports = {
                         options: {
                             modules: true,
                             importLoaders: 1, // make sure sass-loader is used on imported assets
-                            localIdentName: "[local]__[name]__[hash:base64:5]",
+                            modules: {
+                                localIdentName: "[local]__[name]__[hash:base64:5]",
+                            }
                             // publicPath: configPath.buildPath //"./dist"
                         }
                     },

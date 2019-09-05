@@ -35,7 +35,7 @@ class App extends Component {
       <div className={cls.App}>
         <header className={cls["App-header"]}>
           <img src={logo} className={cls["App-logo"]} alt="logo" />
-          <h1 className={scssCls["app-title"]}>Welcome to Reacts 16.8 and webpack 4+ !! </h1>
+          <h1 className={scssCls["app-title"]}>Welcome to Reacts 16.9 and webpack 4+ !! </h1>
         </header>
         
           <Header/>

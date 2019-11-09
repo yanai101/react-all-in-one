@@ -41,8 +41,14 @@
     "image-webpack-loader": "^6.0.0",
     "install": "^0.13.0",
     "jest": "^24.8.0",
+<<<<<<< HEAD
     "node-sass": "^4.13.0",
     "postcss": "^7.0.21",
+=======
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss": "^7.0.16",
+>>>>>>> b18dac4434a0884781a59e81215fe33aed26ac6d
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.5.0",

@@ -6,11 +6,11 @@ import scssCls from './app.scss';
 import './main.global.scss';
 import Header from "./components/heder";
 const LazyComponent = lazy(()=> import('./components/lazyComponent'));
-
+ 
 // const RestaurantListComponent = lazy(() => import('./RestaurantList'));
 
 const Counter = ()=>{
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0) 
 
   return (
     <>

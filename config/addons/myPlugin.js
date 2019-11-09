@@ -1,9 +1,16 @@
 class MyPlugin{
-    apply(compiler){
-        compiler.plugin('emit',(compiler ,callback)  =>{
-            console.log('You can put here sny plugin...');
-            callback();
+    apply(compiler) {
+        compiler.hooks.done.tapAsync("MyPlugin", (stats, cb) => {
+            const assetNames = [];
+            for (let assetName in stats.compilation.assets) {
+                assetNames.push(assetName);
+            }
+            console.log(assetNames.join("\n"));
+            cb();
         });
+        // compiler.hooks.compilation.tap("MyPlugin", (compilation, params) => {
+        //     new MyFirstWebpackCompilationPlugin().apply(compilation);
+        // });
     }
 }
 

@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require("extract-css-chunks-webpack-plugin");
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 // module.exports = (env) =>{
 //
 // }
